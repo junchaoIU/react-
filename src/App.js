@@ -112,7 +112,7 @@ class Game extends React.Component {
 
       const moves = history.map((step, move) => {
           const desc = move ?
-              'Go to move #' + move :
+              '回到第'+ move+'步' :
               '游戏开始';
           return (
               <li key={move}>
@@ -123,9 +123,13 @@ class Game extends React.Component {
 
       let status;
       if (winner) {
-          status = "Winner: " + winner;
+          status = "获胜者: " + winner;
       } else {
-          status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+          if(this.state.stepNumber < 9)
+            status = "下一位执棋者： " + (this.state.xIsNext ? "X" : "O");
+          else{
+              status = "平局！";
+          }
       }
     return (
         <div >

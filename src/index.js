@@ -5,7 +5,7 @@ import Game from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Game />
+    <Game />  {/*渲染Game组件，生成Dom_root*/}
   </React.StrictMode>,
   document.getElementById('root')
 );
